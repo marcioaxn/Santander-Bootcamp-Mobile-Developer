@@ -9,6 +9,12 @@ Repositório dedicado às entregas de exercícios, desafios, entre outros necess
 
 ## Introdução ao Kotlin
 
+### Tipos de dado
+
+
+
+[Kotlin Playground](https://pl.kotl.in/3_RbmJigU)
+
 fun main() {
     // Professora Ana Luísa Dias (DIO)
     val bingo = listOf(3,6,9,8,6,34,2,17,19,21,22,33,29)
