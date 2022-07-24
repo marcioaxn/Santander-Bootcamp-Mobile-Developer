@@ -220,3 +220,9 @@ fun calculate(n1:Int,n2:Int,operation:(Int,Int)->Int):Int{
 }
 
 // fun String.randomCapitalizedLetter() = this[(0..this.length-1).random()].toUpperCase()
+
+
+## Fundamentos de Orientação a Objetos com Kotlin
+
+- Professor Jether Rodrigues
+
