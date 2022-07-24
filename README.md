@@ -9,14 +9,59 @@ Repositório dedicado às entregas de exercícios, desafios, entre outros necess
 
 ## Introdução ao Kotlin
 
-### Tipos de dado
+### Tipos de dado e os parse's (quando houver)
 
+- Int => toInt()
+- Long => toLong()
+- Float => toFloat()
+- Double => toDouble()
+- Array => toList() ???
+- Boolean
+- Char => toChar()
+- Byte => toByte()
+- Short => toShort()
+- Null!
 
+### Declaração de variáveis
 
-[Kotlin Playground](https://pl.kotl.in/3_RbmJigU)
+- var (valor mutável e é camelCase)
+- val (valor imutável e é camelCase)
+- const val (valor imutável e é SNAKE_CASE)
+
+### Principais tópicos dessa matéria
+
+[Kotlin Playground contendo os principais tópicos dessa matéria](https://pl.kotl.in/3_RbmJigU)
 
 fun main() {
     // Professora Ana Luísa Dias (DIO)
+
+    // Exemplo de declaração de variável do tipo var
+
+    // Valor definido e alterado durante a execução
+
+    // var currentAge = 22
+    // var currentAge:Int?
+
+	// --- x --- x --- x ---
+
+    // Exemplo de declaração de variável do tipo val
+
+    // Valor definido durante a execução
+
+    // val currentAge = 22
+    // val currentAge:Int?
+
+    // --- x --- x --- x ---
+
+    // Exemplo de declaração de variável do tipo const val
+
+    // Valor definido durante a compilação
+
+    // const val MIN_AGE = 16
+    // const val MAX_AGE = 69
+
+    // --- x --- x --- x ---
+
     val bingo = listOf(3,6,9,8,6,34,2,17,19,21,22,33,29)
     val number = (1..34).random()
     
