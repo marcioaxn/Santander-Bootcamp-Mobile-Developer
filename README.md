@@ -226,3 +226,141 @@ fun calculate(n1:Int,n2:Int,operation:(Int,Int)->Int):Int{
 
 - Professor Jether Rodrigues
 
+fun main() {
+   val personOne = Person()
+   
+   println(personOne.nome)
+   println(personOne.cpf)
+   
+   println(personOne.personInTo())
+}
+
+data class Banco(
+    val nome:String,
+    val numero:String
+)
+
+class Conta {
+    
+    var agencia:String
+    privte set
+    
+    val numero:String
+    val saldo:Double
+    
+    fun deposito(valor:Double) {
+        
+    }
+    
+    fun saque(valor:Double) {
+        
+    }
+}
+
+class Person {
+    var nome:String = "Teste"
+    var cpf:String = "000.000.000-00"
+    
+    // Construtor secundário
+    constructor()
+    
+    fun personInTo() = "$nome e $cpf"
+    
+}
+
+fun main() {
+    
+    val bankOne = Banco(nome = "Banco teste um", numero = 9)
+    
+    println(bankOne.nome)
+    
+}
+
+data class Banco(
+    val nome:String,
+    val numero:Int
+)
+
+// enum class
+
+fun main() {
+   ClienteTipo.values().forEach { elemento ->
+       println("${elemento.name} - ${elemento.descricao}")
+   }
+   
+   val pf = ClienteTipo.PF
+   println("${pf.name} - ${pf.descricao}")
+}
+
+enum class ClienteTipo(val descricao:String){
+    PF("Pessoa Física"),
+    PJ("Pessoa Jurídica");
+}
+
+// abstract class
+
+Solutions
+Docs
+Community
+Teach
+Play
+1.7.10
+JVM
+Program arguments
+Copy link
+Share code
+Run
+fun main() {
+   val funcionarioUm = Analista("Nome do funcionário Analista", "000.000.000-00", 3333.21)
+   
+   ImprimeRelatorioFuncionario.imprime(funcionarioUm)
+}
+
+class Analista(nome:String, cpf:String, salario:Double) : Funcionario(nome, cpf, salario) {
+    
+    override fun calculoAuxilio() = salario * 0.1
+    
+}
+
+abstract class Funcionario(
+    nome:String,
+    cpf:String,
+    val salario:Double
+) : PersonAbstract(nome, cpf) {
+    
+    // Exemplo da classe Funcionario herdando da classe PersonAbstract
+    
+    protected abstract fun calculoAuxilio():Double
+    
+    override fun toString(): String = """
+        Nome: $nome
+        CPF: $cpf
+        Salário: $salario
+        Auxílio: ${calculoAuxilio()}
+    """.trimIndent()
+    
+}
+
+class ImprimeRelatorioFuncionario {
+    companion object {
+        fun imprime(funcionario: Funcionario) {
+            println(
+                funcionario.toString()
+            )
+        } 
+    }
+}
+
+open class Person (
+    open val nome:String,
+    open val cpf:String
+) {
+    
+}
+
+abstract class PersonAbstract (
+    val nome:String,
+    val cpf:String
+) {
+    
+}
