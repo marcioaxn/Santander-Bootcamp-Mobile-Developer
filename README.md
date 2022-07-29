@@ -364,3 +364,327 @@ abstract class PersonAbstract (
 ) {
     
 }
+
+
+## Aplicando Conceitos de Coloções, Arrays e Listas
+
+- Professor Jether Rodrigues
+
+
+fun main() {
+   // Início da parte do IntArray
+   
+    val valuesIntArray = IntArray(11)
+    
+    valuesIntArray[0] = 0
+    valuesIntArray[1] = 1
+    valuesIntArray[2] = 2
+    valuesIntArray[3] = 2
+    valuesIntArray[4] = 1
+    valuesIntArray[5] = 0
+    valuesIntArray[6] = 9
+    valuesIntArray[7] = 9
+    valuesIntArray[8] = 9
+    valuesIntArray[9] = 0
+    valuesIntArray[10] = 0
+    
+    // Exemplo com o for
+    println("Exemplo com o for")
+    for(valor in valuesIntArray) {
+        
+        // valor é a variável que receberá os elementos do array a cada passagem pelo loop for
+        
+        println(valor)
+        
+    }
+    
+    println(" ")
+    println("// --- x --- x --- x ---")
+    println(" ")
+    
+    // Exemplo com o forEach
+    println("Exemplo com o forEach")
+    
+    valuesIntArray.forEach{
+        println("forEach $it")
+    }
+    
+    println(" ")
+    println("// --- x --- x --- x ---")
+    println(" ")
+    
+    // Exemplo com o for por maio do index
+    println("Exemplo com o for por maio do index")
+    
+    for(index in valuesIntArray.indices) {
+        
+        println("for + index => " + valuesIntArray[index])
+        
+    }
+    
+    // Fim da parte do IntArray
+    
+    println(" ")
+    println("// --- x --- x --- x ---")
+    println(" ")
+    
+    // Início da parte do IntArrayOf
+    println("Início da parte do IntArrayOf")
+    
+    val valuesIntArrayOf = intArrayOf(2, 1, 0, 0, 1, 2, 3, 3, 3, 9, 9)
+    
+    valuesIntArrayOf.forEach {
+        println(it)
+    }
+    
+    // Fim da parte do IntArrayOf
+    
+    println(" ")
+    println("// --- x --- x --- x ---")
+    println(" ")
+    
+    // Início da parte do arrayOf
+    println("Início da parte do arrayOf")
+    
+    val valuesArrayOf = arrayOf("Nome a","Nome b","Nome c")
+    
+    valuesArrayOf.sort()
+    valuesArrayOf.forEach {
+        println(it)
+    }
+    
+    // Fim da parte do arrayOf
+    
+    println(" ")
+    println("// --- x --- x --- x ---")
+    println(" ")
+    
+    // Início da parte do doubleArray
+    println("Início da parte do doubleArray")
+    
+    val valuesDoubleArray = DoubleArray(3)
+    
+    valuesDoubleArray[0] = 0.21
+    valuesDoubleArray[1] = 0.07
+    valuesDoubleArray[2] = 0.33
+    
+    valuesDoubleArray.sort()
+    
+    valuesDoubleArray.forEach {
+        println(it)
+    }
+    
+    valuesDoubleArray.forEachIndexed { index, valor ->
+        
+        valuesDoubleArray[index] = valor * 1.1
+        
+    }
+    
+    valuesDoubleArray.forEach {
+         println("Valor com aumento de 10% => ${it}")
+    }
+    
+    // Fim da parte do doubleArray
+    
+    println(" ")
+    println("// --- x --- x --- x ---")
+    println(" ")
+    
+    // Início da parte de operações
+    println("Início da parte de operações")
+    
+    val valuesDoubleArrayOf = doubleArrayOf(1021.03, 1033.06, 1075.09)
+    
+    for(valueDoubleArrayOf in valuesDoubleArrayOf) {
+        
+        println(valueDoubleArrayOf)
+        
+    }
+    
+    println(" ")
+    println("Maior valor é ${valuesDoubleArrayOf.maxOrNull()}")
+    println(" ")
+    println("Menor valor é ${valuesDoubleArrayOf.minOrNull()}")
+    println(" ")
+    println("Valor médio dos valores é ${valuesDoubleArrayOf.average()}")
+    println(" ")
+    
+    println("Início do exemplo de filtro do valor maior e igual a 1030")
+    println(" ")
+    
+    val valueFilter = valuesDoubleArrayOf.filter{it >= 1030}
+    
+    valueFilter.forEach{
+        println(it)
+    }
+    
+    println(" ")
+    println("Início do exemplo de contar elementos num range")
+    println(valuesDoubleArrayOf.count {it in 1030.0..2000.0}.toString() + " elemento(s)")
+    println(" ")
+    
+    println("Início do exemplo de procurar pelo método find")
+    println(valuesDoubleArrayOf.find {it == 1033.06})
+    println(" ")
+    
+    println("Início do exemplo de procurar qualquer elemento pelo método any, com o retorno em Bolean")
+    println(valuesDoubleArrayOf.any {it == 1033.06})
+    println(" ")
+    
+    println("Início do exemplo lista utilizando listOf")
+    
+    val funcionarioUm = Funcionario("Nome A", 1000.3, "CLT")
+    val funcionarioDois = Funcionario("Nome B", 1000.6, "PJ")
+    val funcionarioTres = Funcionario("Nome C", 1000.9, "CLT")
+    
+    val funcionarios = listOf(funcionarioUm, funcionarioDois, funcionarioTres)
+    
+    funcionarios.forEach{
+        println(it)
+    }
+    
+    println(" ")
+    
+    println("Início de exemplo de procura em uma lista por meio do find")
+    
+    println(funcionarios.find{it.nome == "Nome A"})
+    
+    println(" ")
+    
+    println("Início de exemplo de ordenar por um item da lista")
+    
+    funcionarios.sortedBy{it.salario}.forEach{println(it)}
+    
+    println(" ")
+    
+    println("Início de exemplo de agrupar o retorno por meio de um item da lista")
+    
+    funcionarios.groupBy{it.tipoContratacao}.forEach{println(it)}
+    
+    println(" ")
+    
+    println("Início de exemplo de unir set's separados")
+    
+    val grupoFuncionariosCLT = setOf(funcionarioUm, funcionarioTres)
+    val grupoFuncionariosPj = setOf(funcionarioDois)
+    
+    val gruposFuncionarios = grupoFuncionariosCLT.union(grupoFuncionariosPj)
+    
+    gruposFuncionarios.forEach{println(it)}
+    
+    println(" ")
+    
+    println("Tem a operação subtract, para extrair elementos iguais em set's diferentes, e tem a operação intersect para retornar somente o elemento igual             que existe entre os grupos")
+    
+    println(" ")
+    
+    println("Início da parte do mutableListOf")
+    
+    val funcionariosMutableListOf = mutableListOf(funcionarioUm, funcionarioDois)
+    
+    funcionariosMutableListOf.forEach{
+        println(it)
+    }
+    
+    println(" ")
+    println("// --- x --- x --- x ---")
+    println(" ")
+    
+    // Exemplo de adicionar item na lista
+    println("Exemplo de adicionar item na lista")
+    
+    funcionariosMutableListOf.add(funcionarioTres)
+    
+    funcionariosMutableListOf.forEach{
+        println(it)
+    }
+    
+    println(" ")
+    println("// --- x --- x --- x ---")
+    println(" ")
+    
+    // Exemplo de remover item na lista
+    println("Exemplo de remover item na lista")
+    
+    funcionariosMutableListOf.remove(funcionarioTres)
+    
+    funcionariosMutableListOf.forEach{
+        println(it)
+    }
+    
+    println(" ")
+    println("// --- x --- x --- x ---")
+    println(" ")
+    
+    println("Início da parte do mutableMap com o exemplo de uma classe para um CRUD de um map")
+    
+    val repositorio = Repositorio<Funcionario>()
+    
+    repositorio.create(funcionarioUm.nome, funcionarioUm)
+    repositorio.create(funcionarioDois.nome, funcionarioDois)
+    repositorio.create(funcionarioTres.nome, funcionarioTres)
+    
+    println(repositorio.findById(funcionarioUm.nome))
+    
+    println(" ")
+    println("// --- x --- x --- x ---")
+    println(" ")
+    
+    repositorio.findAll().forEach{
+        println(it)
+    }
+    
+    println("Fim da parte do mutableMap com o exemplo de uma classe para um CRUD de um map")
+    
+    println(" ")
+    
+    // Fim da parte de operações
+    
+    println(" ")
+    println("// --- x --- x --- x ---")
+    println(" ")
+    
+}
+
+class Repositorio<T> {
+    private val map = mutableMapOf<String, T>()
+    
+    // Criar um elemento no map
+    fun create(id: String, value: T) {
+        map[id] = value
+    }
+    
+    // Excluir um item no map
+    fun remove(id: String) = map.remove(id)
+    
+    // Pegar um elemento no map por meio do id
+    fun findById(id: String) = map.get(id)
+    
+    // Pegar todos os elementos do map
+    fun findAll() = map.values
+    
+    
+}
+
+data class Funcionario(
+    val nome: String,
+    val salario: Double,
+    val tipoContratacao: String
+) {
+    
+    override fun toString(): String = 
+    
+    """
+    
+    Nome:           $nome
+    Salário:        $salario
+    Tp Contratação:     $tipoContratacao
+    --- x --- x --- x ---
+    
+    """.trimIndent()
+}
+
+
+
+
+
